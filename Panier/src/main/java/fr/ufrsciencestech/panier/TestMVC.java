@@ -42,7 +42,7 @@ public class TestMVC {
     }
     
     public TestMVC() {
-        /*vueGraph = new VueGraphiqueSimple();
+        vueGraph = new VueGraphiqueSimple();
         controlSimple = new Controleur();
         Panier p = new Panier(5);
         VueConsole vueC = new VueConsole();
@@ -51,14 +51,15 @@ public class TestMVC {
         p.addObserver(vueGraph);
         p.addObserver(vueC);
         vueGraph.ajoutControleur(controlSimple);
-        */
+       
     }
     
     public static void main(String []args){
         //Lancer en dur
-        //TestMVC test = new TestMVC();
+        TestMVC test = new TestMVC();
         
         //Avec Spring IoC
+        /*
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         TestMVC test = (TestMVC)context.getBean("MVC");  //SpringIoC
         test.setControleur( (Controleur)context.getBean("Controleur") );  //SpringIoC
@@ -72,5 +73,6 @@ public class TestMVC {
         
         VueConsole vuec = new VueConsole();
         p.addObserver(vuec);
+        */
     }
 }

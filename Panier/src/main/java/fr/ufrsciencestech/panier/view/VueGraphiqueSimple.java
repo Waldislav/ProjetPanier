@@ -7,9 +7,10 @@ package fr.ufrsciencestech.panier.view;
 import fr.ufrsciencestech.panier.controler.Controleur;
 import fr.ufrsciencestech.panier.model.Panier;
 import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import javax.swing.JButton;
-import javax.swing.JLabel;
+import javax.swing.JComboBox;
+import javax.swing.JList;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -22,7 +23,7 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
      */
     public VueGraphiqueSimple() {
         initComponents();
-        this.setSize(220, 220);
+        this.setSize(320, 320);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
@@ -35,42 +36,62 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
         return this.dec;
     }
      
-    public JLabel getAffiche(){
+    public JTextArea getAfficheListe(){
         return this.affiche;
     }
     
-    public void setAffiche(JLabel affiche){
+    public void setAffiche(JTextArea affiche){
         this.affiche = affiche;
+    }
+    
+    public JComboBox getComboFruit(){
+        return this.comboBoxFruit;
+    }
+    
+    public void setComboFruit(JComboBox comboBoxFruit) {
+        this.comboBoxFruit = comboBoxFruit;
     }
     
     public void ajoutControleur(Controleur c) {
         getInc().addActionListener(c);
         getDec().addActionListener(c);
+        getComboFruit().addActionListener(c);
     }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        affiche = new javax.swing.JLabel();
-        dec = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         inc = new javax.swing.JButton();
+        comboBoxFruit = new javax.swing.JComboBox<>();
+        dec = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        affiche = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        affiche.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        affiche.setText("0");
-        affiche.setToolTipText("");
-        affiche.setName("Affichage"); // NOI18N
-        getContentPane().add(affiche, java.awt.BorderLayout.CENTER);
+        inc.setText("+");
+        inc.setName("Plus"); // NOI18N
+        jPanel1.add(inc);
+
+        comboBoxFruit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Orange", "Cerise", "Banane", "Ananas" }));
+        comboBoxFruit.setName("liste"); // NOI18N
+        jPanel1.add(comboBoxFruit);
+        comboBoxFruit.getAccessibleContext().setAccessibleName("");
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.NORTH);
 
         dec.setText("-");
         dec.setName("Moins"); // NOI18N
-        getContentPane().add(dec, java.awt.BorderLayout.PAGE_END);
+        getContentPane().add(dec, java.awt.BorderLayout.SOUTH);
 
-        inc.setText("+");
-        inc.setName("Plus"); // NOI18N
-        getContentPane().add(inc, java.awt.BorderLayout.PAGE_START);
+        affiche.setColumns(20);
+        affiche.setRows(5);
+        affiche.setName("affiche"); // NOI18N
+        jScrollPane2.setViewportView(affiche);
+
+        getContentPane().add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,12 +99,15 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
     @Override
     public void propertyChange(PropertyChangeEvent pce) {
         Panier p = (Panier) pce.getSource();
-        getAffiche().setText(((Integer)p.getTaillePanier()).toString());
+        getAfficheListe().setText(p.toString());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel affiche;
+    private javax.swing.JTextArea affiche;
+    private javax.swing.JComboBox<String> comboBoxFruit;
     private javax.swing.JButton dec;
     private javax.swing.JButton inc;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }

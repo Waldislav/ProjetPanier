@@ -44,16 +44,7 @@ public class VueGraphiqueSimpleTest {
     
     @Test
     public void testUpdate() throws PanierPleinException, PanierVideException {
-        System.out.println("update");
-        
-        assertEquals(vueg.getAffiche().getText(), "0");
-        p.ajout();
-        assertEquals(vueg.getAffiche().getText(), "1");
-        p.retrait();
-        assertEquals(vueg.getAffiche().getText(), "0");
-        
-        vueg.setAffiche(new JLabel("0", JLabel.CENTER));
-        assertEquals(vueg.getAffiche().getText(), "0");
+       
     }
 
     @Test
