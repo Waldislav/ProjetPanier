@@ -9,7 +9,7 @@ import fr.ufrsciencestech.panier.model.Fruit;
 public class Ananas extends FruitSimple {
 
   public Ananas() {
-    this(0.5, "");
+    this(0.5, "États-Unis");
 }
 
 public Ananas(double prix, String origine) {
