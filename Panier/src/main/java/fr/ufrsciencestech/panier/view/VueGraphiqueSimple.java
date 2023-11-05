@@ -63,13 +63,26 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabelPrix = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         inc = new javax.swing.JButton();
         comboBoxFruit = new javax.swing.JComboBox<>();
+        jCheckBoxJus = new javax.swing.JCheckBox();
         dec = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         affiche = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel3.setText("Prix");
+        jPanel1.add(jLabel3);
+
+        jLabelPrix.setText("0");
+        jPanel1.add(jLabelPrix);
+
+        jLabel1.setText("€");
+        jPanel1.add(jLabel1);
 
         inc.setText("+");
         inc.setName("Plus"); // NOI18N
@@ -79,6 +92,9 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
         comboBoxFruit.setName("liste"); // NOI18N
         jPanel1.add(comboBoxFruit);
         comboBoxFruit.getAccessibleContext().setAccessibleName("");
+
+        jCheckBoxJus.setText("Jus");
+        jPanel1.add(jCheckBoxJus);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.NORTH);
 
@@ -107,6 +123,10 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
     private javax.swing.JComboBox<String> comboBoxFruit;
     private javax.swing.JButton dec;
     private javax.swing.JButton inc;
+    private javax.swing.JCheckBox jCheckBoxJus;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabelPrix;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
