@@ -8,6 +8,7 @@ import fr.ufrsciencestech.panier.controler.Controleur;
 import fr.ufrsciencestech.panier.model.Panier;
 import java.beans.PropertyChangeEvent;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JList;
 import javax.swing.JTextArea;
@@ -35,6 +36,10 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
     public JButton getDec(){
         return this.dec;
     }
+
+    public JCheckBox getJus() {
+        return jCheckBoxJus;
+    }
      
     public JTextArea getAfficheListe(){
         return this.affiche;
@@ -56,6 +61,7 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
         getInc().addActionListener(c);
         getDec().addActionListener(c);
         getComboFruit().addActionListener(c);
+        getJus().addActionListener(c);
     }
     
     @SuppressWarnings("unchecked")
@@ -94,7 +100,9 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
         comboBoxFruit.getAccessibleContext().setAccessibleName("");
 
         jCheckBoxJus.setText("Jus");
+        jCheckBoxJus.setName("Jus"); // NOI18N
         jPanel1.add(jCheckBoxJus);
+
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.NORTH);
 

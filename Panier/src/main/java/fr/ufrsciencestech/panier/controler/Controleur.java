@@ -25,10 +25,11 @@ public class Controleur implements ActionListener {
     
     Panier p;
     String typeFruit;
-    
+    boolean isJus;
     public Controleur() {
         super();
         typeFruit = "Orange"; // Valeur par défaut
+        
     }
     
     public void setPanier(Panier p) {
@@ -42,9 +43,15 @@ public class Controleur implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Component comp =(Component) e.getSource();
+
+        
         if(comp.getName().equals("Plus")){
             try {
-                p.ajout(FruitFactory.createFruit(typeFruit));
+                if (isJus)
+                    p.ajout(FruitFactory.createJus(typeFruit));
+                else
+                    p.ajout(FruitFactory.createFruit(typeFruit));
+
             } catch (PanierPleinException ex) {
                 Logger.getLogger(Controleur.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -61,6 +68,11 @@ public class Controleur implements ActionListener {
             } catch (PanierVideException ex) {
                 Logger.getLogger(Controleur.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
+        else if (comp.getName().equals("Jus")) 
+        {
+            isJus = !isJus;
+            System.out.println("Jus => "+isJus);
         }
     }
     

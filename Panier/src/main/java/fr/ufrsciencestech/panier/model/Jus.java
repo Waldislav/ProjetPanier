@@ -8,20 +8,14 @@ import fr.ufrsciencestech.panier.model.Fruit;
  */
 public class Jus implements Fruit{
     
-    private ArrayList<Fruit> composition;
+    private Fruit fruit;
     
     
-    public Jus(){
-        this.composition = new ArrayList<Fruit>();
+    public Jus(Fruit fruit){
+        this.fruit = fruit;
     }
     
-    /**
-     * Ajoute un Fruit à la compostion du jus
-     * @param f  désigne le fruit à ajouter dans le jus  
-     */
-    public void ajoutFruit(Fruit f){
-        this.composition.add(f);
-    }
+
     /**
      * Indique si le jus de fruit possède des pépins/noyaux
      * @return Toujours faux (qui a vu un jus de fruit plein de pépin)
@@ -37,26 +31,18 @@ public class Jus implements Fruit{
      */
     @Override
     public String toString(){
-        String retour = "Jus de:\n";
-        for (Fruit f : this.composition ){
-            retour = retour.concat(f.toString()+"\n");
-        }
+        String retour = this.fruit.getClass().getSimpleName() + "(Jus) de " + this.fruit.getOrigine() + " à  " + this.getPrix() + " euros";
         return retour;
     }
     @Override
     public String getOrigine(){
-        String retour = "ORIGINES:\n";
-        for (Fruit f : this.composition ){
-            retour = retour.concat(f.getOrigine()+"\n");
-        }
+        String retour = "ORIGINES: " + this.fruit.getOrigine();
         return retour;
     }
     @Override
     public double getPrix(){
         double retour = 0;
-        for (Fruit f : this.composition ){
-            retour += f.getPrix();
-        }
+        retour = this.fruit.getPrix() + 0.5;
         return retour;
     }
             

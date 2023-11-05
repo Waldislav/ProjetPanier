@@ -50,6 +50,23 @@ public class FruitFactory {
             return null;
         }
     }
+
+    public static Fruit createJus(String fruit) {
+        switch (fruit) {
+            case "Ananas":
+                return new Jus(new Ananas());
+            case "Banane":
+                return new Jus(new Banane());
+            case "Cerise":
+                return new Jus(new Cerise());
+            case "Kiwi":
+                return new Jus(new Kiwi());
+            case "Orange":
+                return new Jus(new Orange());
+            default:
+                return null;
+        }
+    }
     
     
 }
