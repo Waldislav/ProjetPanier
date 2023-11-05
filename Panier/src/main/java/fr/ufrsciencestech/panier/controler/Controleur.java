@@ -5,12 +5,8 @@
 package fr.ufrsciencestech.panier.controler;
 
 
-import fr.ufrsciencestech.panier.model.Fruit;
-import fr.ufrsciencestech.panier.model.Orange;
-import fr.ufrsciencestech.panier.model.Kiwi;
-import fr.ufrsciencestech.panier.model.Cerise;
-import fr.ufrsciencestech.panier.model.Banane;
-import fr.ufrsciencestech.panier.model.Ananas;
+
+import fr.ufrsciencestech.panier.model.FruitFactory;
 import fr.ufrsciencestech.panier.model.Panier;
 import fr.ufrsciencestech.panier.model.PanierPleinException;
 import fr.ufrsciencestech.panier.model.PanierVideException;
@@ -32,6 +28,7 @@ public class Controleur implements ActionListener {
     
     public Controleur() {
         super();
+        typeFruit = "Orange"; // Valeur par défaut
     }
     
     public void setPanier(Panier p) {
@@ -47,26 +44,7 @@ public class Controleur implements ActionListener {
         Component comp =(Component) e.getSource();
         if(comp.getName().equals("Plus")){
             try {
-                // Ajouter un fruit (Orange/Kiwi/Cerise/Banane/Ananas) en fonction du typeFruit à l'aide d'un switch
-                switch (typeFruit) {
-                    case "Orange":
-                        p.ajout(new Orange());
-                        break;
-                    case "Kiwi":
-                        p.ajout(new Kiwi());
-                        break;
-                    case "Cerise":
-                        p.ajout(new Cerise());
-                        break;
-                    case "Banane":
-                        p.ajout(new Banane());
-                        break;
-                    case "Ananas":
-                        p.ajout(new Ananas());
-                        break;
-                    default:
-                        break;
-                }
+                p.ajout(FruitFactory.createFruit(typeFruit));
             } catch (PanierPleinException ex) {
                 Logger.getLogger(Controleur.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -74,7 +52,7 @@ public class Controleur implements ActionListener {
         else if (comp.getName().equals("liste")){
             JComboBox liste = (JComboBox) comp;
             typeFruit = String.valueOf(liste.getSelectedItem());
-            System.out.println("Tiens tiens tiens =>"+typeFruit);
+            System.out.println("Tiens tiens tiens => "+typeFruit);
         }
         else if (comp.getName().equals("Moins")) 
         {
