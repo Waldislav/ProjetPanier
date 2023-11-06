@@ -74,7 +74,7 @@ public class Panier{
     public void ajout(Fruit o) throws PanierPleinException { // ajoute le fruit o a la fin du panier si celui-ci n'est
                                                              // pas plein
         ArrayList<Fruit> old = (ArrayList<Fruit>) this.fruits.clone();
-        if (fruits.size() < contenanceMax) {
+        if (!estPlein()) {
             fruits.add(o);
             pcs.firePropertyChange("value", old, this.fruits);
         }
@@ -93,7 +93,7 @@ public class Panier{
     }
 
     public boolean estPlein() { // predicat indiquant que le panier est plein
-        return false;
+        return fruits.size() >= contenanceMax;
     }
 
     // groupe 5

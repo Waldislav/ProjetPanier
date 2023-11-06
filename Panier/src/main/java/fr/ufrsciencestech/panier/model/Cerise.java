@@ -11,19 +11,19 @@ public class Cerise extends FruitSimple {
 	
     public Cerise() 
     {
-        this.prix = 0.6;  //prix en euros
+        this.prix = 0.6;
         this.origine="Italie";
     }
     
     public Cerise(double prix, String origine) 
     {
 	if(prix < 0)
-	    this.prix = -prix;  //une solution possible pour interdire les prix negatifs
+	    this.prix = -prix;
 	else
 	    this.prix = prix;
 
 	if(origine.equals("") || origine == null)
-            this.origine = "Italie";  //Espagne par défaut
+            this.origine = "Italie";
 	else
             this.origine = origine;   
     }

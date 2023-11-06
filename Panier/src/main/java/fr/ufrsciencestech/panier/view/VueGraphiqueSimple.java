@@ -70,12 +70,13 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
         affiche = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.BorderLayout());
 
         inc.setText("+");
         inc.setName("Plus"); // NOI18N
         jPanel1.add(inc);
 
-        comboBoxFruit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Orange", "Cerise", "Banane", "Ananas" }));
+        comboBoxFruit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Orange", "Cerise", "Banane", "Ananas", "Kiwi" }));
         comboBoxFruit.setName("liste"); // NOI18N
         jPanel1.add(comboBoxFruit);
         comboBoxFruit.getAccessibleContext().setAccessibleName("");

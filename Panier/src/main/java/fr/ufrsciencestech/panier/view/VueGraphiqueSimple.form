@@ -41,11 +41,12 @@
         <Component class="javax.swing.JComboBox" name="comboBoxFruit">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
+              <StringArray count="5">
                 <StringItem index="0" value="Orange"/>
                 <StringItem index="1" value="Cerise"/>
                 <StringItem index="2" value="Banane"/>
                 <StringItem index="3" value="Ananas"/>
+                <StringItem index="4" value="Kiwi"/>
               </StringArray>
             </Property>
             <Property name="name" type="java.lang.String" value="liste" noResource="true"/>
