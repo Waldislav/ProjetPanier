@@ -103,8 +103,8 @@ public class PanierTest {
     @Test
     public void testGetTaillePanier() {
         System.out.println("getTaillePanier");
-        Panier instance = null;
         int expResult = 0;
+        Panier instance = new Panier(expResult);
         int result = instance.getTaillePanier();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
