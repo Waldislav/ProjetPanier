@@ -23,7 +23,7 @@ public class FruitFactory {
             case "Orange":
                 return new Orange();
             default:
-                return null;
+                return new NouveauFruit(fruit);
         }
     }
     
@@ -47,7 +47,7 @@ public class FruitFactory {
         case "Orange":
             return new Orange(prix, origine);
         default:
-            return null;
+            return new NouveauFruit(fruit, prix, origine);
         }
     }
 
@@ -64,7 +64,7 @@ public class FruitFactory {
             case "Orange":
                 return new Jus(new Orange());
             default:
-                return null;
+                return new Jus(new NouveauFruit(fruit));
         }
     }
     
