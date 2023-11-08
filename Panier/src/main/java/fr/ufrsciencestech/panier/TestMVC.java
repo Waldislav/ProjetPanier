@@ -41,6 +41,17 @@ public class TestMVC {
         this.controlSimple = controleur;
     }
     
+    public void initListe(Panier p){
+        p.ajoutTypeFruit("Orange");
+        p.ajoutTypeFruit("Cerise");
+        p.ajoutTypeFruit("Banane");
+        p.ajoutTypeFruit("Ananas");
+        p.ajoutTypeFruit("Kiwi");
+        p.ajoutTypeFruit("Macédoine des Iles");
+        p.ajoutTypeFruit("Macédoine de Fruits Rouges");
+        p.ajoutTypeFruit("Macédoine de tout les fruits");
+    }
+    
     public TestMVC() {
         vueGraph = new VueGraphiqueSimple();
         controlSimple = new Controleur();
@@ -52,6 +63,8 @@ public class TestMVC {
         p.addObserver(vueGraph);
         p.addObserver(vueC);
         vueGraph.ajoutControleur(controlSimple);
+        
+        initListe(p);
        
     }
     
@@ -59,21 +72,5 @@ public class TestMVC {
         //Lancer en dur
         TestMVC test = new TestMVC();
         
-        //Avec Spring IoC
-        /*
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        TestMVC test = (TestMVC)context.getBean("MVC");  //SpringIoC
-        test.setControleur( (Controleur)context.getBean("Controleur") );  //SpringIoC
-        test.setVueg( (VueG)context.getBean("Vue") );   //SpringIoC
-         
-        Panier p = new Panier(5); 
-        test.getControleur().setPanier(p);  
-        
-        p.addObserver(test.getVueg());
-        test.getVueg().ajoutControleur(test.getControleur());
-        
-        VueConsole vuec = new VueConsole();
-        p.addObserver(vuec);
-        */
     }
 }

@@ -13,12 +13,8 @@ public class Macedoine implements Fruit {
      * Constructeur de la macédoine
      * @param fruit le fruit à ajouter à la macédoine
      */
-    public Macedoine(Fruit fruit) {
+    public Macedoine() {
         super();
-        if (!fruit.isSeedless())
-            seedless = false;
-        else
-            seedless = true;
     }
     
     /**

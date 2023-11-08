@@ -26,7 +26,7 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
      */
     public VueGraphiqueSimple() {
         initComponents();
-        this.setSize(420, 320);
+        this.setSize(520, 320);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }

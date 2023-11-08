@@ -22,11 +22,6 @@ public class Panier{
         pcs = new PropertyChangeSupport(this);
         
         typesFruit = new ArrayList<String>();
-        typesFruit.add("Orange");
-        typesFruit.add("Cerise");
-        typesFruit.add("Banane");
-        typesFruit.add("Ananas");
-        typesFruit.add("Kiwi");
     }
     
     public ArrayList<String> getTypesFruits(){

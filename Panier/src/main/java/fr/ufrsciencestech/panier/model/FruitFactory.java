@@ -22,6 +22,12 @@ public class FruitFactory {
                 return new Kiwi();
             case "Orange":
                 return new Orange();
+            case "Macédoine des Iles" :
+                return new MacedoineIle();
+            case "Macédoine de Fruits Rouges" :
+                return new MacedoineFruitsRouge();
+            case "Macédoine de tout les fruits" :
+                return new MacedoineTout();
             default:
                 return new NouveauFruit(fruit);
         }
