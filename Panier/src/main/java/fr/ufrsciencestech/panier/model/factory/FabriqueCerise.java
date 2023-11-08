@@ -7,11 +7,15 @@ package fr.ufrsciencestech.panier.model.factory;
 import fr.ufrsciencestech.panier.model.Cerise;
 import fr.ufrsciencestech.panier.model.Fruit;
 
-/**
- *
+/** 
+ * Fabrique de cerises
  * @author va864097
  */
 public class FabriqueCerise implements Fabrique {
+
+    /**
+     * Fabrique une cerise
+     */
     @Override
     public Fruit fabriquer(){
         return new Cerise();

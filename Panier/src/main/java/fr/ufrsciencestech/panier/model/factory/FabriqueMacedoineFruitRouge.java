@@ -8,10 +8,14 @@ import fr.ufrsciencestech.panier.model.Fruit;
 import fr.ufrsciencestech.panier.model.MacedoineFruitsRouge;
 
 /**
- *
+ * Fabrique de macedoine de fruits rouges
  * @author va864097
  */
 public class FabriqueMacedoineFruitRouge implements Fabrique {
+
+    /**
+     * Fabrique une macedoine de fruits rouges
+     */
     @Override
     public Fruit fabriquer(){
         MacedoineFruitsRouge m = new MacedoineFruitsRouge();

@@ -9,10 +9,14 @@ import fr.ufrsciencestech.panier.model.Fruit;
 import fr.ufrsciencestech.panier.model.MacedoineIle;
 
 /**
- *
+ * Fabrique de macedoine des iles
  * @author va864097
  */
 public class FabriqueMacedoineIle implements Fabrique {
+
+    /**
+     * Fabrique une macedoine des iles
+     */
     @Override
     public Fruit fabriquer(){
         MacedoineIle m = new MacedoineIle();

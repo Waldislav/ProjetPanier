@@ -8,10 +8,14 @@ import fr.ufrsciencestech.panier.model.Banane;
 import fr.ufrsciencestech.panier.model.Fruit;
 
 /**
- *
+ * Fabrique de bananes
  * @author va864097
  */
 public class FabriqueBanane implements Fabrique {
+
+    /**
+     * Fabrique une banane
+     */
     @Override
     public Fruit fabriquer(){
         return new Banane();

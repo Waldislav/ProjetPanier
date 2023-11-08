@@ -7,9 +7,13 @@ package fr.ufrsciencestech.panier.model.factory;
 import fr.ufrsciencestech.panier.model.Fruit;
 
 /**
- *
+ * Interface Fabrique
  * @author va864097
  */
 public interface Fabrique {
+    /**
+     * Fabrique un fruit
+     * @return un fruit
+     */
     public Fruit fabriquer();
 }

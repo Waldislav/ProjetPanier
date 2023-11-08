@@ -8,10 +8,14 @@ import fr.ufrsciencestech.panier.model.Fruit;
 import fr.ufrsciencestech.panier.model.Kiwi;
 
 /**
- *
+ * Fabrique de kiwis
  * @author va864097
  */
 public class FabriqueKiwi implements Fabrique {
+
+    /**
+     * Fabrique un kiwi
+     */
     @Override
     public Fruit fabriquer(){
         return new Kiwi();
