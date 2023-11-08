@@ -1,4 +1,15 @@
-fr/ufrsciencestech/panier/model/FruitFactory.class
+fr/ufrsciencestech/panier/model/factory/FabriqueJus.class
+fr/ufrsciencestech/panier/model/factory/FabriqueMacedoineIle.class
+fr/ufrsciencestech/panier/view/DiagAjout.class
+fr/ufrsciencestech/panier/view/DiagAjout$1$1.class
 fr/ufrsciencestech/panier/model/Jus.class
-fr/ufrsciencestech/panier/model/fruitSimple.class
+fr/ufrsciencestech/panier/model/MacedoineFruitsRouge.class
+fr/ufrsciencestech/panier/model/MacedoineTout.class
+fr/ufrsciencestech/panier/model/factory/FabriqueMacedoineFruitRouge.class
+fr/ufrsciencestech/panier/view/VueGraphiqueSimple$1.class
+fr/ufrsciencestech/panier/model/factory/FabriqueNouveauFruit.class
 fr/ufrsciencestech/panier/model/Macedoine.class
+fr/ufrsciencestech/panier/model/factory/FabriqueMacedoineTout.class
+fr/ufrsciencestech/panier/model/NouveauFruit.class
+fr/ufrsciencestech/panier/model/MacedoineIle.class
+fr/ufrsciencestech/panier/view/DiagAjout$1.class

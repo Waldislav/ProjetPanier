@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: fr.ufrsciencestech.panier.model.JusTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.007 s <<< FAILURE! - in fr.ufrsciencestech.panier.model.JusTest
+testtoString(fr.ufrsciencestech.panier.model.JusTest)  Time elapsed: 0.001 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<...ge(Jus) de France à []1.0 euros> but was:<...ge(Jus) de France à [ ]1.0 euros>
+	at fr.ufrsciencestech.panier.model.JusTest.testtoString(JusTest.java:27)
+
