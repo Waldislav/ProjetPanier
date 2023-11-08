@@ -32,7 +32,6 @@ public class DiagAjout extends javax.swing.JDialog {
     }
     
     public void ajoutControleur(Controleur c) {
-        System.out.println("Roh l'ajout de fou");
         this.getNom().addActionListener(c);
         this.getAjout().addActionListener(c);
     }
@@ -52,6 +51,7 @@ public class DiagAjout extends javax.swing.JDialog {
         boutAjout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setName("diagAjout"); // NOI18N
 
         jPanel1.setLayout(new java.awt.GridLayout(1, 1));
 
