@@ -32,6 +32,7 @@ public class DiagAjout extends javax.swing.JDialog {
     }
     
     public void ajoutControleur(Controleur c) {
+        System.out.println("Roh l'ajout de fou");
         this.getNom().addActionListener(c);
         this.getAjout().addActionListener(c);
     }

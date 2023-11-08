@@ -11,6 +11,7 @@ import java.util.*;
 public class Panier{
     private ArrayList<Fruit> fruits; // attribut pour stocker les fruits
     private int contenanceMax; // nb maximum d'oranges que peut contenir le panier
+    private ArrayList<String> typesFruit;
     PropertyChangeSupport pcs;
 
     // groupe 1
@@ -19,6 +20,24 @@ public class Panier{
         this.fruits = new ArrayList<Fruit>();
         this.contenanceMax = contenanceMax;
         pcs = new PropertyChangeSupport(this);
+        
+        typesFruit = new ArrayList<String>();
+        typesFruit.add("Orange");
+        typesFruit.add("Cerise");
+        typesFruit.add("Banane");
+        typesFruit.add("Ananas");
+        typesFruit.add("Kiwi");
+    }
+    
+    public ArrayList<String> getTypesFruits(){
+        return this.typesFruit;
+    }
+    
+    public void ajoutTypeFruit(String type){
+        
+        ArrayList<String> old = (ArrayList<String>) typesFruit.clone();
+        typesFruit.add(type);
+        pcs.firePropertyChange("value", old, this.typesFruit);
     }
 
     @Override

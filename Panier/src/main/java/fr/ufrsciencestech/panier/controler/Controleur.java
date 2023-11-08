@@ -5,7 +5,6 @@
 package fr.ufrsciencestech.panier.controler;
 
 
-import fr.ufrsciencestech.panier.model.*;
 import fr.ufrsciencestech.panier.model.factory.*;
 
 
@@ -13,11 +12,12 @@ import fr.ufrsciencestech.panier.model.FruitFactory;
 import fr.ufrsciencestech.panier.model.Panier;
 import fr.ufrsciencestech.panier.model.PanierPleinException;
 import fr.ufrsciencestech.panier.model.PanierVideException;
+import fr.ufrsciencestech.panier.view.DiagAjout;
+import fr.ufrsciencestech.panier.view.VueGraphiqueSimple;
 
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.reflect.Constructor;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
@@ -31,12 +31,18 @@ public class Controleur implements ActionListener {
     Panier p;
     String typeFruit;
     Fabrique fabrique;
+    VueGraphiqueSimple frame;
+    DiagAjout diag;
     boolean isJus;
     
     public Controleur() {
         super();
         typeFruit = "Orange"; // Valeur par défaut
         
+    }
+    
+    public void setFrame(VueGraphiqueSimple frame){
+        this.frame = frame;
     }
     
     public void setPanier(Panier p) {
@@ -91,6 +97,20 @@ public class Controleur implements ActionListener {
         {
             isJus = !isJus;
             System.out.println("Jus => "+isJus);
+        }
+        else if (comp.getName().equals("nouveau")) {
+            diag = new DiagAjout(frame, true);
+            diag.ajoutControleur(this);
+            diag.setVisible(true);
+            
+        } 
+        else if (comp.getName().equals("nomFruit") || comp.getName().equals("ajoutFruit")) {
+            String nomFruit = diag.getNom().getText();
+            System.out.println("Eh bah ?");
+            if(!nomFruit.equals("")){
+                p.ajoutTypeFruit(nomFruit);
+                diag.setVisible(false);
+            }
         }
     }
     

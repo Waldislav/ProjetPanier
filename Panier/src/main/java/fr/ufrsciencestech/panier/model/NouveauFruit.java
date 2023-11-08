@@ -36,6 +36,10 @@ public class NouveauFruit extends FruitSimple {
             this.origine = origine;   
     }
     
+    public String getNom(){
+        return this.nom;
+    }
+    
     @Override
     public String toString() {
         return nom+" de " + origine + " à " + prix + " euros";

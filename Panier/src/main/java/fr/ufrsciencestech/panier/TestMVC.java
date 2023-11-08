@@ -48,6 +48,7 @@ public class TestMVC {
         VueConsole vueC = new VueConsole();
         
         controlSimple.setPanier(p);
+        controlSimple.setFrame((VueGraphiqueSimple) vueGraph);
         p.addObserver(vueGraph);
         p.addObserver(vueC);
         vueGraph.ajoutControleur(controlSimple);

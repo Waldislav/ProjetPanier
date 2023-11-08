@@ -31,7 +31,15 @@ public class Jus implements Fruit{
      */
     @Override
     public String toString(){
-        String retour = this.fruit.getClass().getSimpleName() + "(Jus) de " + this.fruit.getOrigine() + " à  " + this.getPrix() + " euros";
+        String retour;
+        if(!this.fruit.getClass().getSimpleName().equals("NouveauFruit"))
+            retour = this.fruit.getClass().getSimpleName();
+        else
+        {
+            NouveauFruit f = (NouveauFruit) this.fruit;
+            retour = f.getNom();
+        }
+        retour += "(Jus) de " + this.fruit.getOrigine() + " à  " + this.getPrix() + " euros";
         return retour;
     }
     @Override

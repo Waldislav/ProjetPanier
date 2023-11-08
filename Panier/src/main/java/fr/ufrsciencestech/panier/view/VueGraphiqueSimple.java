@@ -7,6 +7,7 @@ package fr.ufrsciencestech.panier.view;
 import fr.ufrsciencestech.panier.controler.Controleur;
 import fr.ufrsciencestech.panier.model.Panier;
 import java.beans.PropertyChangeEvent;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -25,7 +26,7 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
      */
     public VueGraphiqueSimple() {
         initComponents();
-        this.setSize(320, 320);
+        this.setSize(420, 320);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
@@ -62,11 +63,16 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
         this.comboBoxFruit = comboBoxFruit;
     }
     
+    public JButton getBoutonAjout(){
+        return this.nouveau;
+    }
+    
     public void ajoutControleur(Controleur c) {
         getInc().addActionListener(c);
         getDec().addActionListener(c);
         getComboFruit().addActionListener(c);
         getJus().addActionListener(c);
+        getBoutonAjout().addActionListener(c);
     }
     
     @SuppressWarnings("unchecked")
@@ -80,12 +86,12 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
         inc = new javax.swing.JButton();
         comboBoxFruit = new javax.swing.JComboBox<>();
         jCheckBoxJus = new javax.swing.JCheckBox();
+        nouveau = new javax.swing.JButton();
         dec = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         affiche = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.BorderLayout());
 
         jLabel3.setText("Prix");
         jPanel1.add(jLabel3);
@@ -109,6 +115,14 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
         jCheckBoxJus.setName("Jus"); // NOI18N
         jPanel1.add(jCheckBoxJus);
 
+        nouveau.setText("New");
+        nouveau.setName("nouveau"); // NOI18N
+        nouveau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nouveauActionPerformed(evt);
+            }
+        });
+        jPanel1.add(nouveau);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.NORTH);
 
@@ -126,11 +140,16 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void nouveauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nouveauActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nouveauActionPerformed
+
     @Override
     public void propertyChange(PropertyChangeEvent pce) {
         Panier p = (Panier) pce.getSource();
         getAfficheListe().setText(p.toString());
         getAffichePrix().setText(String.valueOf(p.getPrix()));
+        this.getComboFruit().setModel(new DefaultComboBoxModel<>(p.getTypesFruits().toArray(new String[0])));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -144,5 +163,6 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
     private javax.swing.JLabel jLabelPrix;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton nouveau;
     // End of variables declaration//GEN-END:variables
 }
