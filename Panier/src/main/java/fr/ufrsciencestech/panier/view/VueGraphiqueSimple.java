@@ -10,6 +10,7 @@ import java.beans.PropertyChangeEvent;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JTextArea;
 
@@ -47,6 +48,10 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
     
     public void setAffiche(JTextArea affiche){
         this.affiche = affiche;
+    }
+    
+    public JLabel getAffichePrix(){
+        return this.jLabelPrix;
     }
     
     public JComboBox getComboFruit(){
@@ -124,6 +129,7 @@ public class VueGraphiqueSimple extends javax.swing.JFrame implements VueG{
     public void propertyChange(PropertyChangeEvent pce) {
         Panier p = (Panier) pce.getSource();
         getAfficheListe().setText(p.toString());
+        getAffichePrix().setText(String.valueOf(p.getPrix()));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

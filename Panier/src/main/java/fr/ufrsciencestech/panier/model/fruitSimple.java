@@ -8,7 +8,7 @@ package fr.ufrsciencestech.panier.model;
  *
  * @author cp326381
  */
-public abstract class FruitSimple implements Fruit{
+public abstract class fruitSimple implements Fruit{
     protected double prix;
     protected String origine;
  
