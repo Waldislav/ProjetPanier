@@ -139,7 +139,7 @@ public class PanierTest {
         //fail("The test case is a prototype.");
         String contenu = instance.toString();
         Orange test=new Orange();
-        assertEquals(test.toString(),contenu);
+        assertEquals(test.toString()+System.getProperty("line.separator"),contenu);
     }
 
 }
