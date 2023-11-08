@@ -85,7 +85,11 @@ public class Panier{
 
     public void setFruit(int i, Fruit f) { // modificateur du fruit contenu dans le panier a l'emplacement n°i par f
                                            // (s'il y a bien deja un fruit a cet emplacement, ne rien faire sinon)
-        
+        if (i < fruits.size()) {
+            if (fruits.get(i) instanceof Fruit) {
+                fruits.set(i, f);
+            }
+        }    
     }
 
     public boolean estVide() { // predicat indiquant que le panier est vide
@@ -93,7 +97,7 @@ public class Panier{
     }
 
     public boolean estPlein() { // predicat indiquant que le panier est plein
-        return fruits.size() >= contenanceMax;
+        return fruits.size() == contenanceMax;
     }
 
     // groupe 5
@@ -111,12 +115,22 @@ public class Panier{
     // groupe 6
     public double getPrix() { // calcule le prix du panier par addition des prix de tous les fruits contenus
                               // dedans
-        return 0;
+        double prix = 0;
+        for (int i = 0; i < fruits.size(); i++) {
+            prix += fruits.get(i).getPrix();
+        }
+        return prix;
     }
 
     // groupe 7
     public void boycotteOrigine(String origine) { // supprime du panier tous les fruits provenant du pays origine
-
+        for (int i = 0; i < fruits.size(); i++) {
+            if (fruits.get(i).getOrigine().toUpperCase().equals(origine.toUpperCase())) {
+                fruits.remove(i);
+                i--;
+            }
+            
+        }
     }
 
     // groupe 8

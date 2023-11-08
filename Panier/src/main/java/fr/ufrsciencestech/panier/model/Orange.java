@@ -4,7 +4,7 @@ package fr.ufrsciencestech.panier.model;
  *
  * @author roudet
  */
-public class Orange extends FruitSimple {
+public class Orange extends FruitSimple implements Fruit {
 
 	
     public Orange() 

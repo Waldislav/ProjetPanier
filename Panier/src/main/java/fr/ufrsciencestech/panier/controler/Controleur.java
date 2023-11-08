@@ -4,8 +4,16 @@
  */
 package fr.ufrsciencestech.panier.controler;
 
+
 import fr.ufrsciencestech.panier.model.*;
 import fr.ufrsciencestech.panier.model.factory.*;
+
+
+import fr.ufrsciencestech.panier.model.FruitFactory;
+import fr.ufrsciencestech.panier.model.Panier;
+import fr.ufrsciencestech.panier.model.PanierPleinException;
+import fr.ufrsciencestech.panier.model.PanierVideException;
+
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,10 +31,12 @@ public class Controleur implements ActionListener {
     Panier p;
     String typeFruit;
     Fabrique fabrique;
+    boolean isJus;
     
     public Controleur() {
         super();
-        typeFruit="Orange";
+        typeFruit = "Orange"; // Valeur par défaut
+        
     }
     
     public void setPanier(Panier p) {
@@ -48,18 +58,17 @@ public class Controleur implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         
         Component comp =(Component) e.getSource();
+
         
         if(comp.getName().equals("Plus")){
-            
-            setTypeFruit();
-            
-            if(fabrique != null){
-                Fruit fruit = fabrique.fabriquer();
-                try{
-                    p.ajout(fruit);
-                } catch (PanierPleinException ex){
-                    ex.printStackTrace();
-                }
+            try {
+                if (isJus)
+                    p.ajout(FruitFactory.createJus(typeFruit));
+                else
+                    p.ajout(FruitFactory.createFruit(typeFruit));
+
+            } catch (PanierPleinException ex) {
+                Logger.getLogger(Controleur.class.getName()).log(Level.SEVERE, null, ex);
             }
             
         }
@@ -67,7 +76,7 @@ public class Controleur implements ActionListener {
        
             JComboBox liste = (JComboBox) comp;
             typeFruit = String.valueOf(liste.getSelectedItem());
-            
+            System.out.println("Tiens tiens tiens => "+typeFruit);
         }
         else if (comp.getName().equals("Moins")) {
             
@@ -78,7 +87,11 @@ public class Controleur implements ActionListener {
             }
             
         }
-        
+        else if (comp.getName().equals("Jus")) 
+        {
+            isJus = !isJus;
+            System.out.println("Jus => "+isJus);
+        }
     }
     
 }
