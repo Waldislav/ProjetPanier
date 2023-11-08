@@ -4,6 +4,8 @@
  */
 package fr.ufrsciencestech.panier.model;
 
+import fr.ufrsciencestech.panier.model.factory.Fabrique;
+
 /**
  *
  * @author waldislav
@@ -12,7 +14,5 @@ public class MacedoineFruitsRouge extends Macedoine implements Fruit{
     
     public MacedoineFruitsRouge(){
         super();
-        this.ajouteFruit(FruitFactory.createFruit("Fraise"));
-        this.ajouteFruit(FruitFactory.createFruit("Cerise"));
     }
 }

@@ -5,7 +5,6 @@ import fr.ufrsciencestech.panier.controler.Controleur;
 import fr.ufrsciencestech.panier.model.Panier;
 import fr.ufrsciencestech.panier.view.VueConsole;
 import fr.ufrsciencestech.panier.view.VueG;
-import fr.ufrsciencestech.panier.view.VueGraphiqueAWT;
 import fr.ufrsciencestech.panier.view.VueGraphiqueSimple;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -56,8 +55,6 @@ public class TestMVC {
     }
     
     public static void main(String []args){
-        //Lancer en dur
         TestMVC test = new TestMVC();
-        
     }
 }

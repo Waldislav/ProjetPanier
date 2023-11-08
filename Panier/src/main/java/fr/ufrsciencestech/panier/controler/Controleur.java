@@ -5,10 +5,10 @@
 package fr.ufrsciencestech.panier.controler;
 
 
+import fr.ufrsciencestech.panier.model.Fruit;
 import fr.ufrsciencestech.panier.model.factory.*;
 
 
-import fr.ufrsciencestech.panier.model.FruitFactory;
 import fr.ufrsciencestech.panier.model.Panier;
 import fr.ufrsciencestech.panier.model.PanierPleinException;
 import fr.ufrsciencestech.panier.model.PanierVideException;
@@ -50,13 +50,17 @@ public class Controleur implements ActionListener {
     }
     
     public void setTypeFruit() {
+        
         switch(typeFruit){
             case "Orange" : fabrique = new FabriqueOrange(); break;
             case "Banane" : fabrique = new FabriqueBanane(); break;
             case "Cerise" : fabrique = new FabriqueCerise(); break;
             case "Kiwi" : fabrique = new FabriqueKiwi(); break;
             case "Ananas" : fabrique = new FabriqueAnanas(); break;
-            default : fabrique = null;
+            case "Macédoine des Iles" : fabrique = new FabriqueMacedoineIle(); break;
+            case "Macédoine de Fruits Rouges" : fabrique = new FabriqueMacedoineFruitRouge(); break;
+            case "Macédoine de tout les fruits" : fabrique = new FabriqueMacedoineTout(); break;
+            default : fabrique = new FabriqueNouveauFruit(typeFruit); break;
         }
     }
 
@@ -64,25 +68,23 @@ public class Controleur implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         
         Component comp =(Component) e.getSource();
-
         
         if(comp.getName().equals("Plus")){
-            try {
-                if (isJus)
-                    p.ajout(FruitFactory.createJus(typeFruit));
-                else
-                    p.ajout(FruitFactory.createFruit(typeFruit));
-
-            } catch (PanierPleinException ex) {
+            setTypeFruit();
+            Fruit fruit = fabrique.fabriquer();
+            try{
+                if(isJus) {
+                    fabrique = new FabriqueJus(fruit);
+                    fruit = fabrique.fabriquer();
+                }
+                p.ajout(fruit);
+            } catch (PanierPleinException ex){
                 Logger.getLogger(Controleur.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
         }
         else if (comp.getName().equals("liste")) {
-       
             JComboBox liste = (JComboBox) comp;
             typeFruit = String.valueOf(liste.getSelectedItem());
-            System.out.println("Tiens tiens tiens => "+typeFruit);
         }
         else if (comp.getName().equals("Moins")) {
             

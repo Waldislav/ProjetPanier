@@ -12,10 +12,5 @@ public class MacedoineTout extends Macedoine implements Fruit{
     
     public MacedoineTout(){
         super();
-        this.ajouteFruit(FruitFactory.createFruit("Orange"));
-        this.ajouteFruit(FruitFactory.createFruit("Cerise"));
-        this.ajouteFruit(FruitFactory.createFruit("Banane"));
-        this.ajouteFruit(FruitFactory.createFruit("Ananas"));
-        this.ajouteFruit(FruitFactory.createFruit("Kiwi"));
     }
 }

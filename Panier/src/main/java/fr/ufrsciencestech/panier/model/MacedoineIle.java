@@ -12,7 +12,5 @@ public class MacedoineIle extends Macedoine implements Fruit{
     
     public MacedoineIle(){
         super();
-        this.ajouteFruit(FruitFactory.createFruit("Ananas"));
-        this.ajouteFruit(FruitFactory.createFruit("Banane"));
     }
 }
