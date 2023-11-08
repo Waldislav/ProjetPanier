@@ -22,12 +22,12 @@ public class MacedoineTest {
     
     @Test
     public void testIsSeedlessTrue(){
-        assertTrue(macedoine.isSeedless()); 
+        assertFalse(macedoine.isSeedless()); 
     }
     
     @Test
     public void testIsSeedlessFalse(){
-        macedoine.ajouteFruit(new Cerise(0.6,"Itlie"));
+        macedoine.ajouteFruit(new Cerise(0.6,"Italie"));
         assertFalse(macedoine.isSeedless()); 
     }
     

@@ -1,13 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: fr.ufrsciencestech.panier.model.OrangeTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.021 s <<< FAILURE! - in fr.ufrsciencestech.panier.model.OrangeTest
-testToString(fr.ufrsciencestech.panier.model.OrangeTest)  Time elapsed: 0.007 s  <<< FAILURE!
-java.lang.AssertionError
-
-testSetOrigine(fr.ufrsciencestech.panier.model.OrangeTest)  Time elapsed: 0 s  <<< FAILURE!
-java.lang.AssertionError
-
-testSetPrix(fr.ufrsciencestech.panier.model.OrangeTest)  Time elapsed: 0.001 s  <<< FAILURE!
-java.lang.AssertionError
-
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in fr.ufrsciencestech.panier.model.OrangeTest

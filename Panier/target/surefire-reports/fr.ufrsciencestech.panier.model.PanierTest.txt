@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: fr.ufrsciencestech.panier.model.PanierTest
 -------------------------------------------------------------------------------
-Tests run: 17, Failures: 1, Errors: 16, Skipped: 0, Time elapsed: 0.099 s <<< FAILURE! - in fr.ufrsciencestech.panier.model.PanierTest
-testBoycotteOrigine(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.016 s  <<< ERROR!
+Tests run: 17, Failures: 1, Errors: 16, Skipped: 0, Time elapsed: 0.082 s <<< FAILURE! - in fr.ufrsciencestech.panier.model.PanierTest
+testBoycotteOrigine(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.001 s  <<< ERROR!
 java.lang.NullPointerException
 	at fr.ufrsciencestech.panier.model.PanierTest.testBoycotteOrigine(PanierTest.java:239)
 
@@ -14,19 +14,19 @@ testGetFruit(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.001 s 
 java.lang.NullPointerException
 	at fr.ufrsciencestech.panier.model.PanierTest.testGetFruit(PanierTest.java:132)
 
-testGetContenanceMax(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.005 s  <<< ERROR!
+testGetContenanceMax(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0 s  <<< ERROR!
 java.lang.NullPointerException
 	at fr.ufrsciencestech.panier.model.PanierTest.testGetContenanceMax(PanierTest.java:117)
 
-testAddObserver(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.001 s  <<< ERROR!
+testAddObserver(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0 s  <<< ERROR!
 java.lang.NullPointerException
 	at fr.ufrsciencestech.panier.model.PanierTest.testAddObserver(PanierTest.java:63)
 
-testEstPlein(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.002 s  <<< ERROR!
+testEstPlein(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.004 s  <<< ERROR!
 java.lang.NullPointerException
 	at fr.ufrsciencestech.panier.model.PanierTest.testEstPlein(PanierTest.java:199)
 
-testMain(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.017 s  <<< FAILURE!
+testMain(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.019 s  <<< FAILURE!
 java.lang.AssertionError: The test case is a prototype.
 	at fr.ufrsciencestech.panier.model.PanierTest.testMain(PanierTest.java:268)
 
@@ -38,7 +38,7 @@ testAjout_0args(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.001
 java.lang.NullPointerException
 	at fr.ufrsciencestech.panier.model.PanierTest.testAjout_0args(PanierTest.java:145)
 
-testAjout_Fruit(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.007 s  <<< ERROR!
+testAjout_Fruit(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0 s  <<< ERROR!
 java.lang.NullPointerException
 	at fr.ufrsciencestech.panier.model.PanierTest.testAjout_Fruit(PanierTest.java:158)
 
@@ -46,23 +46,23 @@ testGetPrix(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0 s  <<< 
 java.lang.NullPointerException
 	at fr.ufrsciencestech.panier.model.PanierTest.testGetPrix(PanierTest.java:225)
 
-testRetrait(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0 s  <<< ERROR!
+testRetrait(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.001 s  <<< ERROR!
 java.lang.NullPointerException
 	at fr.ufrsciencestech.panier.model.PanierTest.testRetrait(PanierTest.java:212)
 
-testSetFruits(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.004 s  <<< ERROR!
+testSetFruits(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.003 s  <<< ERROR!
 java.lang.NullPointerException
 	at fr.ufrsciencestech.panier.model.PanierTest.testSetFruits(PanierTest.java:90)
 
-testGetTaillePanier(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0 s  <<< ERROR!
+testGetTaillePanier(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.002 s  <<< ERROR!
 java.lang.NullPointerException
 	at fr.ufrsciencestech.panier.model.PanierTest.testGetTaillePanier(PanierTest.java:103)
 
-testGetFruits(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.001 s  <<< ERROR!
+testGetFruits(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0 s  <<< ERROR!
 java.lang.NullPointerException
 	at fr.ufrsciencestech.panier.model.PanierTest.testGetFruits(PanierTest.java:76)
 
-testEquals(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.006 s  <<< ERROR!
+testEquals(fr.ufrsciencestech.panier.model.PanierTest)  Time elapsed: 0.01 s  <<< ERROR!
 java.lang.NullPointerException
 	at fr.ufrsciencestech.panier.model.PanierTest.testEquals(PanierTest.java:253)
 

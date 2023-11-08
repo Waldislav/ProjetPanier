@@ -24,7 +24,9 @@ public class JusTest {
     public void testtoString(){
         Fruit fruit = new Orange(0.5,"France");
         Jus jus = new Jus(fruit);
-        assertEquals("Orange(Jus) de France à 1.0 euros",jus.toString());
+        String expected = "Orange(Jus) de France à  1.0 euros";
+        String result = jus.toString();
+        assertEquals(expected,result);
     }
     
     @Test
@@ -43,7 +45,6 @@ public class JusTest {
         double expected = 1.0;
         double result = jus.getPrix();
         double tolerance = 0.0001;
-
         assertEquals(expected, result, tolerance);
     }
 }

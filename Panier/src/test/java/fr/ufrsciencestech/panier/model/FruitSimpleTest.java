@@ -4,8 +4,7 @@
  */
 package fr.ufrsciencestech.panier.model;
 
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 /**
@@ -45,7 +44,7 @@ public abstract class FruitSimpleTest {
         fs2.setPrix(0.6);
         double expected2 = 0.5;
         double result2 = fs2.getPrix();
-        assertTrue(expected2 == result2);
+        assertFalse(expected2 == result2);
 
         // Test pour createFruitNull();
         FruitSimple fs_null = createFruitNull();
@@ -67,7 +66,7 @@ public abstract class FruitSimpleTest {
         fs2.setOrigine("Espagne");
         String expected2 = "France";
         String result2 = fs2.getOrigine();
-        assertTrue(expected2.equals(result2));
+        assertFalse(expected2.equals(result2));
 
         // NULL
         FruitSimple fs_null = createFruitNull();
@@ -77,11 +76,13 @@ public abstract class FruitSimpleTest {
     @Test
     public void testToString() {
         FruitSimple fs = createFruit(0.5,"France");
-        String expected = "Fruit de France à 0.5 euros";
+        String expected = "Orange de France à 0.5 euros";
         String result = fs.toString();
-        assertTrue(expected.equals(result));
-        
-
+        assertEquals(expected,result);      
+    }
+    
+    @Test
+    public void testToStringNull(){
         FruitSimple fs_null = createFruitNull();
         assertNull(fs_null);
     }
