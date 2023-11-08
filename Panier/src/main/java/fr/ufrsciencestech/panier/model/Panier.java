@@ -22,6 +22,19 @@ public class Panier{
         pcs = new PropertyChangeSupport(this);
         
         typesFruit = new ArrayList<String>();
+        
+        
+    }
+    
+    public void initListe(){
+        this.ajoutTypeFruit("Orange");
+        this.ajoutTypeFruit("Cerise");
+        this.ajoutTypeFruit("Banane");
+        this.ajoutTypeFruit("Ananas");
+        this.ajoutTypeFruit("Kiwi");
+        this.ajoutTypeFruit("Macédoine des Iles");
+        this.ajoutTypeFruit("Macédoine de Fruits Rouges");
+        this.ajoutTypeFruit("Macédoine de tout les fruits");
     }
     
     public ArrayList<String> getTypesFruits(){

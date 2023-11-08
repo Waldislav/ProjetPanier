@@ -41,17 +41,6 @@ public class TestMVC {
         this.controlSimple = controleur;
     }
     
-    public void initListe(Panier p){
-        p.ajoutTypeFruit("Orange");
-        p.ajoutTypeFruit("Cerise");
-        p.ajoutTypeFruit("Banane");
-        p.ajoutTypeFruit("Ananas");
-        p.ajoutTypeFruit("Kiwi");
-        p.ajoutTypeFruit("Macédoine des Iles");
-        p.ajoutTypeFruit("Macédoine de Fruits Rouges");
-        p.ajoutTypeFruit("Macédoine de tout les fruits");
-    }
-    
     public TestMVC() {
         vueGraph = new VueGraphiqueSimple();
         controlSimple = new Controleur();
@@ -63,9 +52,7 @@ public class TestMVC {
         p.addObserver(vueGraph);
         p.addObserver(vueC);
         vueGraph.ajoutControleur(controlSimple);
-        
-        initListe(p);
-       
+        p.initListe();
     }
     
     public static void main(String []args){
